@@ -11,6 +11,7 @@ export class AppComponent {
   registrado=false;
   nombre:string="";
   apellido:string="";
+  cargo:string="";
   entradas: any;
 
   constructor() {
@@ -26,6 +27,6 @@ export class AppComponent {
   usuarioRegistrado() {
     this.registrado=true;
     console.log(this.nombre);
-    this.mensaje="El usuario " + this.nombre + " " + this.apellido + " se ha registrado correctamente.";
+    this.mensaje="Se ha registrado correctamente";
   }
 }

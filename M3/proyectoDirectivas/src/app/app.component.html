@@ -17,12 +17,23 @@
   />
   <br />
 
+  <input
+    type="text"
+    name="cargo"
+    placeholder="Inserte su cargo"
+    [(ngModel)]="cargo"
+  />
+  <br />
+
   <input type="submit" value="Registrar" (click)="usuarioRegistrado()" /> <br />
 </form>
 
 <br />
 
-<p *ngIf="registrado; else sinRegistrar">{{ mensaje }}</p>
+<p *ngIf="registrado; else sinRegistrar">
+  {{ mensaje }} el usuario {{ nombre }} {{ apellido }} y tiene el cargo de
+  <span [ngClass]="{paraDirectores: cargo=='director'}">{{ cargo }}</span>
+</p>
 <ng-template #sinRegistrar>
   <p>Nadie registrado</p>
 </ng-template>
@@ -30,5 +41,5 @@
 <br /><br />
 
 <ul>
-  <li *ngFor="let titulo of entradas">{{titulo.titulo}}</li>
+  <li *ngFor="let titulo of entradas">{{ titulo.titulo }}</li>
 </ul>
